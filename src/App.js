@@ -76,7 +76,7 @@ class App extends Component {
 
         </p>
         <Search
-          fetchMovies={()=>this.fetchMovies()}
+          fetchMovies={this.fetchMovies}
         />
         {(this.state.renderLoader)&&
         <Loader type="Audio" color="#somecolor" height={80} width={80} />
