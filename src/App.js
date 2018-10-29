@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Loader from 'react-loader-spinner'
+import Loader from 'react-loader-spinner';
 import './App.css';
 
 class App extends Component {
@@ -9,7 +9,6 @@ class App extends Component {
     this.state = {
       renderLoader:false,
       popular: null,
-      genres:null,
       inputValue:''
     }
   }
@@ -25,9 +24,7 @@ class App extends Component {
     })
     axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=03b96ac61ca771f70dc412e781c3361e&language=en-US`)
       .then((response) => {
-          this.setState ({
-            genres:response,
-          })
+          this.genres=response;
       })
       .catch(function (error) {
         //console.log(error);
@@ -62,20 +59,18 @@ class App extends Component {
     .catch(function (error) {
       //console.log(error);
     });
-  }
+  };
 
   render() {
+
     return (
       <div className="App">
-
-        <p className="App-intro">
-
-        </p>
         <Search
           fetchMovies={this.fetchMovies}
         />
-        {(this.state.renderLoader)&&
-        <Loader type="Audio" color="#somecolor" height={80} width={80} />
+
+        {(this.state.renderLoader) &&
+          <Loader type="ThreeDots" color="#somecolor" height={80} width={40} />
         }
         <p/>
         {(this.state.popular && !this.state.renderLoader)&&
@@ -83,7 +78,7 @@ class App extends Component {
 
             <List
               list={this.state.popular}
-              genres={this.state.genres}
+              genres={this.genres}
               >
               </List>
           </div>
@@ -123,6 +118,48 @@ class Search extends Component {
 
 class List extends Component {
 
+  render(){
+    return(
+
+      <div>
+        {(this.props.list.data) &&
+          <div>
+
+            <span>Всего фильмов - {this.props.list.data.total_results}</span>
+            {this.props.list.data.results.map((movie, index) =>
+              <div key={movie.id}>
+                <MovieCard
+                  movie={movie}
+                  genres={this.props.genres}
+                />
+
+
+              </div>
+            )}
+          </div>
+        }
+      </div>
+    )
+  }
+}
+
+class MovieCard extends Component {
+  constructor(props, ctx) {
+    super(props, ctx);
+    this.state = {
+      image_path:''
+    }
+  }
+
+  genres(genre_ids, index){
+    this.genreName(genre_ids);
+    return(
+      <span key={index}>
+         {this.genre},{" "}
+      </span>
+    )
+  }
+
   genreName(genre_ids){
     const genre=this.props.genres.data.genres;
 
@@ -132,32 +169,36 @@ class List extends Component {
 
   }
 
-  genres(genre_ids, index){
+  getImages(id){
 
-    this.genreName(genre_ids);
-    return(
-      <span key={index}>
-         {this.genre},{" "}
-      </span>
-    )
+    axios.get(`https://api.themoviedb.org/3/movie/`+id+`/images?api_key=03b96ac61ca771f70dc412e781c3361e&height=720`)
+      .then((response) => {
+        this.setState({
+          image_path:response.data.posters[0].file_path
+        });
+      })
+      .catch(function (error) {
+
+      });
   }
 
-  render(){
-
-    return(
-
+  render() {
+    const movie=this.props.movie;
+    this.getImages(movie.id)
+    return (
       <div>
-        {(this.props.list.data) &&
-          <div>
-            <span>Всего фильмов - {this.props.list.data.total_results}</span>
-            {this.props.list.data.results.map((string, index) =>
-              <p key={index}>{string.title} -{" "}
-                {string.genre_ids.map((genre_ids, index)=>this.genres(genre_ids, index))}
-                </p>
-            )}
-          </div>
+        { this.state.image_path &&
+          <img
+            src={`https://image.tmdb.org/t/p/w185${this.state.image_path}`}
+            alt={movie.title}
+          />
         }
+        <p>
+          {movie.title} -{" "}
+          {movie.genre_ids.map((genre_ids, index)=>this.genres(genre_ids, index))}
+        </p>
       </div>
+
     )
   }
 }
