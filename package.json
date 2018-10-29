@@ -2,7 +2,7 @@
   "name": "movie",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://VuykoD.github.io/reactMovie",
+  "homepage": "http://VuykoD.github.io/movie",
   "dependencies": {
     "axios": "^0.18.0",
     "material-ui": "^1.0.0-beta.47",
