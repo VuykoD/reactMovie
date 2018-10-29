@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Loader from 'react-loader-spinner'
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -40,7 +39,7 @@ class App extends Component {
         this.setState ({
           popular:response,
           renderLoader:false,
-        }), 3000)
+        }), 500)
       })
       .catch(function (error) {
         //console.log(error);
@@ -58,7 +57,7 @@ class App extends Component {
         this.setState ({
           popular:response,
           renderLoader:false,
-        }), 3000)
+        }), 500)
     })
     .catch(function (error) {
       //console.log(error);
@@ -68,10 +67,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+
         <p className="App-intro">
 
         </p>
@@ -127,11 +123,21 @@ class Search extends Component {
 
 class List extends Component {
 
+  genreName(genre_ids){
+    const genre=this.props.genres.data.genres;
+
+    for (let i = 0; i < genre.length; i++ ){
+      if (genre[i].id === genre_ids) return this.genre=genre[i].name
+    }
+
+  }
+
   genres(genre_ids, index){
-    console.log(this.props.genres.data)
+
+    this.genreName(genre_ids);
     return(
       <span key={index}>
-        {genre_ids},
+         {this.genre},{" "}
       </span>
     )
   }
@@ -145,7 +151,7 @@ class List extends Component {
           <div>
             <span>Всего фильмов - {this.props.list.data.total_results}</span>
             {this.props.list.data.results.map((string, index) =>
-              <p key={index}>{string.title}. -
+              <p key={index}>{string.title} -{" "}
                 {string.genre_ids.map((genre_ids, index)=>this.genres(genre_ids, index))}
                 </p>
             )}
