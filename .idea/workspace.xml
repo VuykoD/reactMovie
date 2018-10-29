@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54a3dec2-4b88-4672-b1dc-b4627d624fc2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,35 +26,39 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="1816" />
+          <entry key="js" value="1823" />
+          <entry key="json" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="1816" />
+          <entry key="JSON" value="1" />
+          <entry key="JavaScript" value="1823" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="js" value="1" />
           <entry key="json" value="1" />
+          <entry key="md" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="1" />
+          <entry key="Markdown" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="189" column="34" selection-start-line="189" selection-start-column="34" selection-end-line="189" selection-end-column="34" />
+            <state relative-caret-position="345">
+              <caret line="191" column="39" selection-start-line="191" selection-start-column="39" selection-end-line="191" selection-end-column="39" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -66,10 +67,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor>
+                <folding>
+                  <element signature="e#0#41#0" expanded="true" />
+                  <element signature="e#0#41#0" expanded="true" />
+                  <element signature="e#0#26#0" expanded="true" />
+                  <element signature="e#0#42#0" expanded="true" />
+                  <element signature="e#0#26#0" expanded="true" />
+                  <element signature="e#0#35#0" expanded="true" />
+                  <element signature="e#0#26#0" expanded="true" />
+                  <element signature="e#0#26#0" expanded="true" />
+                  <element signature="n#!!doc" expanded="true" />
+                  <element signature="e#0#26#0" expanded="true" />
+                  <element signature="e#0#26#0" expanded="true" />
+                  <element signature="e#0#28#0" expanded="true" />
+                  <element signature="e#0#28#0" expanded="true" />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="49" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="49" />
+            <state relative-caret-position="360">
+              <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -90,6 +117,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>axios</find>
+      <find>ButtonBase</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -99,6 +127,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -136,24 +165,6 @@
             <path>
               <item name="movie" type="b2602c69:ProjectViewProjectNode" />
               <item name="movie" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="movie" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="movie" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="material-ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="movie" type="b2602c69:ProjectViewProjectNode" />
-              <item name="movie" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="material-ui" type="462c0819:PsiDirectoryNode" />
-              <item name="ButtonBase" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -238,12 +249,12 @@
       <workItem from="1537187658298" duration="110000" />
       <workItem from="1537187885979" duration="13285000" />
       <workItem from="1540728623804" duration="5557000" />
-      <workItem from="1540818374632" duration="13451000" />
+      <workItem from="1540818374632" duration="13714000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39980000" />
+    <option name="totallyTimeSpent" value="40243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1505" y="-4" width="1855" height="1084" extended-state="6" />
@@ -287,20 +298,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="49" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="189" column="34" selection-start-line="189" selection-start-column="34" selection-end-line="189" selection-end-column="34" />
+        <state relative-caret-position="345">
+          <caret line="191" column="39" selection-start-line="191" selection-start-column="39" selection-end-line="191" selection-end-column="39" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <folding>
+              <element signature="e#0#41#0" expanded="true" />
+              <element signature="e#0#41#0" expanded="true" />
+              <element signature="e#0#26#0" expanded="true" />
+              <element signature="e#0#42#0" expanded="true" />
+              <element signature="e#0#26#0" expanded="true" />
+              <element signature="e#0#35#0" expanded="true" />
+              <element signature="e#0#26#0" expanded="true" />
+              <element signature="e#0#26#0" expanded="true" />
+              <element signature="n#!!doc" expanded="true" />
+              <element signature="e#0#26#0" expanded="true" />
+              <element signature="e#0#26#0" expanded="true" />
+              <element signature="e#0#28#0" expanded="true" />
+              <element signature="e#0#28#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
         </state>
       </provider>
     </entry>
