@@ -5,23 +5,39 @@
   "homepage": "http://VuykoD.github.io/reactMovie",
   "dependencies": {
     "axios": "^0.18.0",
-    "material-ui": "^1.0.0-beta.47",
+    "material-ui": "^0.20.2",
+    "npm": "^6.4.1",
     "prop-types": "^15.6.2",
-    "react": "^16.5.1",
+    "react": "^16.5.2",
     "react-axios": "^2.0.1",
-    "react-dom": "^16.5.1",
+    "react-dom": "^16.5.2",
     "react-loader-spinner": "^2.0.6",
-    "react-scripts": "1.1.5"
+    "react-scripts": "2.0.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=8888 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "lint": "eslint",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
     "gh-pages": "^1.1.0"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
