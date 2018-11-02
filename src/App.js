@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 import Loader from 'react-loader-spinner';
 import './App.css';
 
@@ -61,8 +63,17 @@ class App extends Component {
 
   render() {
     const loader = this.state.renderLoader;
+    const { classes } = this.props;
+
     return (
       <div className="App">
+        <TextField
+          id="standard-dense"
+          label="movie name"
+        />
+        <Button variant="contained" color="primary">
+          Search
+        </Button>
         <Search
           fetchMovies={this.fetchMovies}
         />
@@ -184,7 +195,7 @@ class MovieCard extends Component {
           {movie.genre_ids.map((genre_ids, index) => this.genres(genre_ids, index))}
         </p>
         <img
-          src={`https://image.tmdb.org/t/p/w185${movie.poster_path}`}
+          // src={`https://image.tmdb.org/t/p/w185${movie.poster_path}`}
           alt={movie.title}
         />
       </div>
