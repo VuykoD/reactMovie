@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import Card from './demo';
 import Loader from 'react-loader-spinner';
 import './App.css';
 
@@ -63,17 +64,11 @@ class App extends Component {
 
   render() {
     const loader = this.state.renderLoader;
-    const { classes } = this.props;
 
     return (
       <div className="App">
-        <TextField
-          id="standard-dense"
-          label="movie name"
-        />
-        <Button variant="contained" color="primary">
-          Search
-        </Button>
+
+
         <Search
           fetchMovies={this.fetchMovies}
         />
@@ -101,23 +96,38 @@ class Search extends Component {
   constructor(props, ctx) {
     super(props, ctx);
     this.state = {
-      inputValue: '',
+      inputValue: null,
     };
+    this.onClick = this.onClick.bind(this);
   }
 
   onChange(e) {
     this.setState({
       inputValue: e.target.value,
     });
-    this.props.fetchMovies(e.target.value);
   }
+
+  onClick() {
+        if (this.state.inputValue)
+        this.props.fetchMovies(this.state.inputValue);
+    }
 
   render() {
     return (
-      <input
-        value={this.state.inputValue}
-        onChange={(e) => this.onChange(e)}
-      />
+    <div>
+        <Button
+            variant="contained"
+            color="primary"
+            onClick={this.onClick}
+        >
+            Search
+        </Button>
+        <TextField
+          id="standard-dense"
+          label="movie name"
+          onChange={(e) => this.onChange(e)}
+        />
+      </div>
     );
   }
 }
@@ -138,10 +148,10 @@ class List extends Component {
       <div>
         {(this.props.list.data) &&
           <div>
-            <span>
+            <p>
               {'Всего фильмов - '}
               {this.props.list.data.total_results}
-            </span>
+            </p>
             {this.props.list.data.results.map((movie) => (
               <MovieCard
                 key={movie.id}
@@ -166,10 +176,10 @@ class MovieCard extends Component {
     }),
   };
 
-  genres(genre_ids, index) {
+  genres(genre_ids) {
     this.genreName(genre_ids);
     return (
-      <span key={index}>
+      <span>
         {this.genre}
         {', '}
       </span>
@@ -186,19 +196,16 @@ class MovieCard extends Component {
 
   render() {
     const movie = this.props.movie;
-
+ //{movie.genre_ids.map((genre_ids, index) => this.genres(genre_ids, index))}
     return (
-      <div>
-        <p>
-          {movie.title}
-          {' - '}
-          {movie.genre_ids.map((genre_ids, index) => this.genres(genre_ids, index))}
-        </p>
-        <img
-          // src={`https://image.tmdb.org/t/p/w185${movie.poster_path}`}
-          alt={movie.title}
+
+
+        <Card
+           overview={movie.overview}
+           title = {movie.title}
+           poster = {movie.poster_path}
         />
-      </div>
+
     );
   }
 }
